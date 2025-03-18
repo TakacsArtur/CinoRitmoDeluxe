@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0cukfqx4u8vu"]
+
+[ext_resource type="Script" path="res://01/fail.gd" id="1_ev28p"]
+[ext_resource type="Texture2D" uid="uid://cs2n6qcfoubh4" path="res://Assets/Jpegs/General/fail.png" id="1_whfy4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ev28p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(42, 24)
+texture = ExtResource("1_whfy4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
